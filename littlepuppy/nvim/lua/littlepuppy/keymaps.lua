@@ -19,7 +19,11 @@ map('', '<Right>', '<nop>')
 -- Delete full word backwards
 map('n', '<Leader>d', 'dvb')
 
-
 -- Move selected Up or Down
-map('v', 'j', ":m '>+1<CR>gv=gv")
-map('v', 'k', ":m '<-2<CR>gv=gv")
+
+map('n', '<A-j>', ":m .+1<CR>==")
+map('n', '<A-k>', ":m .-2<CR>==")
+map('i', '<A-j>', "<Esc>:m .+1<CR>==gi")
+map('i', '<A-k>', "<Esc>:m .-2<CR>==gi")
+map('v', '<A-j>', ":m '>+1<CR>gv=gv")
+map('v', '<A-k>', ":m '<-2<CR>gv=gv")

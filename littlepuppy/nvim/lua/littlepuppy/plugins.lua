@@ -30,34 +30,41 @@ end
 
 local function plugins(use)
     use { "wbthomason/packer.nvim" }
+
     use { "nvim-lua/plenary.nvim", module = "plenary" }
+    --    use {
+    --        "sainnhe/everforest",
+    --        config = function()
+    --            vim.cmd 'colorscheme everforest'
+    --        end
+    --    }
     use {
-        "sainnhe/everforest",
+        'EdenEast/nightfox.nvim',
         config = function()
-            vim.cmd 'colorscheme everforest'
+            vim.cmd 'colorscheme nightfox'
         end
     }
+
+    use { 'nvim-lualine/lualine.nvim', requires = { 'nvim-tree/nvim-web-devicons', opt = true } }
     use { "bronson/vim-trailing-whitespace" }
     use { 'nvim-telescope/telescope.nvim', tag = '0.1.1', requires = { { 'nvim-lua/plenary.nvim' } } }
     use { 'nvim-tree/nvim-tree.lua', requires = { { 'nvim-tree/nvim-web-devicons' } } }
     use { "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim", "neovim/nvim-lspconfig" }
     use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
     use { 'rcarriga/nvim-notify' }
-    use { 'onsails/lspkind-nvim' }
-    use { 'hrsh7th/cmp-buffer' }
-    use { 'hrsh7th/cmp-nvim-lsp' }
-    use { 'hrsh7th/nvim-cmp' }
-    use { 'windwp/nvim-autopairs' }
-    use { 'jose-elias-alvarez/null-ls.nvim' }
-    use { 'nvim-treesitter/nvim-treesitter', requires = { { 'paulbuzakov/nvim-ts-autotag' } } }
-    use { 'glepnir/lspsaga.nvim' }
-    use { 'L3MON4D3/LuaSnip' }
     use {
-        'numToStr/Comment.nvim',
+        'nvim-treesitter/nvim-treesitter',
         config = function()
-            require('Comment').setup()
-        end
+            require('littlepuppy.treesitter')
+        end,
+        requires = { { 'paulbuzakov/nvim-ts-autotag' } }
     }
+    use { 'hrsh7th/nvim-cmp' }
+    use { 'hrsh7th/cmp-nvim-lsp' }
+    use { 'L3MON4D3/LuaSnip' }
+    use { 'saadparwaiz1/cmp_luasnip' }
+    use { 'rafamadriz/friendly-snippets' }
+    use { 'windwp/nvim-autopairs' }
     use { 'lewis6991/gitsigns.nvim' }
     use { 'dinhhuy258/git.nvim' }
 
