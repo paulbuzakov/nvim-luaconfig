@@ -1,4 +1,6 @@
-require('littlepuppy.default')
-require('littlepuppy.clipboard')
-require('littlepuppy.keymaps')
-require('littlepuppy.plugins')
+require('default')
+require('clipboard')
+require('keybindings')
+require('plugins')
+
+require('colorscheme')
