@@ -31,41 +31,15 @@ end
 local function plugins(use)
     use { "wbthomason/packer.nvim" }
 
-    use { 'nvim-lua/plenary.nvim' }
-    use { 'cormacrelf/dark-notify' }
-    use { "catppuccin/nvim", as = "catppuccin" }
-    use { 'rcarriga/nvim-notify' }
     use { 'nvim-tree/nvim-web-devicons' }
+    use { 'nvim-lua/plenary.nvim' }
+    use { 'rcarriga/nvim-notify' }
+    use { 'svrana/neosolarized.nvim', requires = { 'tjdevries/colorbuddy.nvim' }}
     use { 'nvim-tree/nvim-tree.lua' }
     use { 'nvim-lualine/lualine.nvim' }
-    use { 'lewis6991/gitsigns.nvim' }
-    use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }   
-    use { 'junegunn/fzf', run = './install --bin' }
-    use { 'ibhagwan/fzf-lua' }
-    use { 
-        "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
-        "neovim/nvim-lspconfig"
-    }
-    use({
-        "glepnir/lspsaga.nvim",
-        opt = true,
-        branch = "main",
-        event = "LspAttach"
-    })
-    use { 'jose-elias-alvarez/null-ls.nvim' } 
-    use { 'folke/which-key.nvim' }
-    use { 'hrsh7th/cmp-nvim-lsp' }
-    use { 'hrsh7th/cmp-buffer' }
-    use { 'hrsh7th/cmp-path' }
-    use { 'hrsh7th/cmp-cmdline' }
-    use { 'hrsh7th/nvim-cmp' }
-    use { 'hrsh7th/cmp-vsnip' }
-    use { 'hrsh7th/vim-vsnip' }
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
-    }
+    use { 'akinsho/bufferline.nvim', tag = "*" }
+    use { 'nvim-telescope/telescope.nvim', tag = '0.1.1'}
+
     if packer_bootstrap then
         require("packer").sync()
     end
